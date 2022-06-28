@@ -1,4 +1,4 @@
-
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -29,10 +29,25 @@
             <a class="nav-link" href="{%url 'logar'%}">Logar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Produto</a>
+            <a class="nav-link" href="#">Patrocinador</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Patrocinador</a>
+            <a class="nav-link" href="#quemSomos">Quem somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#menu-itens">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#depoimentos">Depoimentos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Funcionarios">Funcionarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Unidades">Unidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contatos">Contatos</a>
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item dropdown">
@@ -68,10 +83,13 @@
       <div class="col-md-6 mt-md-0 mt-3">
 
         <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
-          repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
-          harum esse fugiat. Itaque, culpa?</p>
+        <h5 class="text-uppercase font-weight-bold">Pagamento</h5>
+        <p>Aceitamos todas as formas de pagamentos</p>
+        <img src="{% static 'home/img/pagamentos/visto.png' %}" height="30px" alt="visa">
+        <img src="{% static 'home/img/pagamentos/paypal .png' %} " height="30px" alt="paypal">
+        <img src="{% static 'home/img/pagamentos/pagamento-online.png' %} " height="" alt="pagamento oline">
+        <img src="{% static 'home/img/pagamentos/pagamento-com-cartao-de-credito.png' %} " height="30px" alt="cartao">
+        <img src="{% static 'home/img/pagamentos/pix-106.png' %} " height="30px" alt="pix">
 
       </div>
       <!-- Grid column -->
@@ -82,10 +100,11 @@
       <div class="col-md-6 mb-md-0 mb-3">
 
         <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum
-          commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id
-          excepturi hic.</p>
+        <h5 class="text-uppercase font-weight-bold">Redes Sociais</h5>
+        <p>Nao deixe de nos acompanhar em nossas redes sociais</p>
+        <img src="{% static 'home/img/redes/facebook.png' %} " height="30px" alt="facebook">
+        <img src="{% static 'home/img/redes/instagram.png'%} " height="30px" alt="instagram">
+   
 
       </div>
       <!-- Grid column -->
@@ -97,11 +116,13 @@
   <!-- Footer Text -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="/"> MDBootstrap.com</a>
+  <div class="footer-copyright text-center py-3">© 2022 Copyright:
+    <a href="https://github.com/santosgv" target="_blank"> https://github.com/santosgv</a>
   </div>
   <!-- Copyright -->
-
+  <a href="https://api.whatsapp.com/send?phone=5531993839825&text=Ola%20!%20vim%20pelo%20seu%20Portifolio" target="_blank" style="position:fixed;bottom:20px;right:30px;">
+    <svg enable-background="new 0 0 512 512" width="50" height="50" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M256.064,0h-0.128l0,0C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104  l98.4-31.456C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z" fill="#4CAF50"></path><path d="m405.02 361.5c-6.176 17.44-30.688 31.904-50.24 36.128-13.376 2.848-30.848 5.12-89.664-19.264-75.232-31.168-123.68-107.62-127.46-112.58-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624 26.176-62.304c6.176-6.304 16.384-9.184 26.176-9.184 3.168 0 6.016 0.16 8.576 0.288 7.52 0.32 11.296 0.768 16.256 12.64 6.176 14.88 21.216 51.616 23.008 55.392 1.824 3.776 3.648 8.896 1.088 13.856-2.4 5.12-4.512 7.392-8.288 11.744s-7.36 7.68-11.136 12.352c-3.456 4.064-7.36 8.416-3.008 15.936 4.352 7.36 19.392 31.904 41.536 51.616 28.576 25.44 51.744 33.568 60.032 37.024 6.176 2.56 13.536 1.952 18.048-2.848 5.728-6.176 12.8-16.416 20-26.496 5.12-7.232 11.584-8.128 18.368-5.568 6.912 2.4 43.488 20.48 51.008 24.224 7.52 3.776 12.48 5.568 14.304 8.736 1.792 3.168 1.792 18.048-4.384 35.52z" fill="#FAFAFA"></path></svg>
+</a>
 </footer>
 <!-- Footer -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" ></script>

@@ -2,7 +2,181 @@
 {% load static %}
 
 {% block 'head' %}
+<link rel="stylesheet" href="{% static 'home/css/home.css' %}" >
 {% endblock %} 
 
 {% block 'body' %}
+<section id="quemSomos" class="transition">
+    <div class="container-fluid quemSomos margin text-center">
+
+      <img src="{% static 'home/img/quemsomos.png'%}" class="rounded-circle" width="100%" height="100%" alt="Wesley monteiro">
+      <p>Com mais de 10 anos no mercado, a Barbearia W.M já conquistou clientes de inúmeros Locais na Regiao de Ribeirao
+        das Neves.</p>
+
+    </div>
+  </section>
+
+  <section id="menu-itens">
+    <div id="menu" class="card text-center">
+      <div class="container text-center">
+        <h2 class="titulo"> Conheça alguns de nossos produtos </h2>
+        <div class="row">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{% static  'home/img/produtos/produtos2.jpeg'  %}" width="100%" height="300px"
+              alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Kirklang</h5>
+              <p class="card-text">Tratamento capilar mais vendido do Brasil</p>
+              <a href="https://wa.me/5531988018546?text=Ola+quero+comprar+um+produto+%21" target="_blank" class="btn btn-primary">Mais
+                informaçoes</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{% static  'home/img/produtos/produtos3.jpeg' %}" width="100%" height="300px"
+              alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Barber Alfa</h5>
+              <p class="card-text">Pomada de auta fixaçao efeito teia</p>
+              <a href="https://wa.me/5531988018546?text=Ola+quero+comprar+um+produto+%21" target="_blank" class="btn btn-primary">Mais
+                informaçoes</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{% static  'home/img/produtos/produtos4.jpeg' %}" width="100%" height="300px"
+              alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">G10 Black</h5>
+              <p class="card-text">Gel cola black de Fixação </br> capilar</p>
+              <a href="https://wa.me/5531988018546?text=Ola+quero+comprar+um+produto+%21" target="_blank" class="btn btn-primary">Mais
+                informaçoes</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{% static  'home/img/produtos/produtos5.jpeg' %}" width="100%" height="300px"
+              alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">G10 Premium</h5>
+              <p class="card-text">Gel capilar de ultra Fixaçâo</p>
+              <a href="https://wa.me/5531988018546?text=Ola+quero+comprar+um+produto+%21" target="_blank" class="btn btn-primary">Mais
+                informaçoes</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{% static  'home/img/produtos/produtos6.jpeg' %}" width="100%" height="300px"
+              alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Gel Boy</h5>
+              <p class="card-text">Gel super cola transparente.</p>
+              <a href="https://wa.me/5531988018546?text=Ola+quero+comprar+um+produto+%21" target="_blank" class="btn btn-primary">Mais
+                informaçoes</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{% static  'home/img/produtos/produtos7.jpeg' %}"  width="100%" height="300px"
+              alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Big Man Black</h5>
+              <p class="card-text">Pomada Capilar black</p>
+              <a href="https://wa.me/5531988018546?text=Ola+quero+comprar+um+produto+%21" target="_blank" class="btn btn-primary">Mais
+                informaçoes</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{% static  'home/img/produtos/produtos8.jpeg' %}" width="100%" height="300px"
+              alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Big Man maça verde</h5>
+              <p class="card-text">Novidade !!! Pomada de efeito molhado com essência de maçâ verde</p>
+              <a href="https://wa.me/5531988018546?text=Ola+quero+comprar+um+produto+%21" target="_blank" class="btn btn-primary">Mais
+                informaçoes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="depoimentos">
+    <div class="container  margin depoimentos text-center">
+      <h3 class="tit-depoi">Quem ja passou por aqui</h3>
+      <ul class="list-unstyled">
+        <li class="media">
+          <img src="{% static  'home/img/lucas pinheiro.jpg' %}" class="rounded-circle" width="80px" height="80px" class="mr-3"
+            alt="...">
+          <div class="media-body">
+            <h5 class="mt-0 mb-1">@menor_du_corte</h5>
+            <p>"Exelentes proficionais"</p>
+          </div>
+        </li>
+        <li class="media my-4">
+          <img src="{% static  'home/img/wm.jpg' %}" class="rounded-circle" width="80px" height="80px" class="mr-3" alt="...">
+          <div class="media-body">
+            <h5 class="mt-0 mb-1">@wm_du_corte</h5>
+            <p>"Melhor da regiao"</p>
+          </div>
+        </li>
+        <li class="media">
+          <img src="{% static  'home/img/vitor.jpg' %}" class="rounded-circle" width="80px" height="80px" class="mr-3" alt="...">
+          <div class="media-body">
+            <h5 class="mt-0 mb-1">@vitim_gone</h5>
+            <p>"Mala dms 🔥👏top"</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="Funcionarios">
+    <div class="container-fluid  margin Funcionarios text-center">
+      <h3 class="funcionarios">Funcionarios</h3>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <img src="{% static  'home/img/flash.jpeg' %}" class="rounded-circle" width="100%" height="300" alt="Renatim">
+            <p>Flash</p>
+    
+          </div>
+          <div class="col-md-3">
+            <img src="{% static  'home/img/wm.jpg' %}" class="rounded-circle" width="100%" height="300" alt="Wm">
+            <p>Wm</p>
+   
+          </div>
+
+          <div class="col-md-3">
+            <img src="{% static  'home/img/menor.jpeg' %}" class="rounded-circle" width="100%" height="300" alt="Wm">
+            <p>Menor</p>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="Unidades">
+    <div class="container-fluid margin Unidades text-center">
+      <h3 class="titulo">Unidades:</h3>
+      <div class="cointainer">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Belvedere</h5>
+            <p><img src="https://img.icons8.com/material-sharp/24/000000/phone-disconnected.png"/><a href="tel:+5531988018546" style="color:black;" 
+              title="Clique aqui para ligar">31 98801-8546</p></a>
+            <p><img src="https://img.icons8.com/material/24/000000/marker--v1.png" /> Unidade 1 Belvedere :Av Emanuel
+              Luciano pio 151 📍</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d911.8493221489449!2d-44.118590604674374!3d-19.78597647501599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6ed66c4c09887%3A0x22bbef61f4282168!2sAv.%20Manoel%20Luciano%20Pio%2C%20151%20-%20Belvedere%2C%20Ribeir%C3%A3o%20das%20Neves%20-%20MG%2C%2033821-422!5e0!3m2!1spt-BR!2sbr!4v1644552712864!5m2!1spt-BR!2sbr"
+              width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="col-md-6">
+            <h5>Neviana</h5>
+            <p><img src="https://img.icons8.com/material-sharp/24/000000/phone-disconnected.png"/><a href="tel:+5531992976789" style="color:black;"
+            title="Clique para ligar"> 31 99297-6789</p></a>
+            <p><img src="https://img.icons8.com/material/24/000000/marker--v1.png" /> Unidade 2 Neviana :LMG 806 n• 1027
+              📍</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234.65009894248652!2d-44.1089600510539!3d-19.7805635709013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6f3b490e0d5bf%3A0xbe4492936eea26fc!2sAgro%20Costa!5e0!3m2!1spt-BR!2sbr!4v1644552802621!5m2!1spt-BR!2sbr"
+              width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock %}
