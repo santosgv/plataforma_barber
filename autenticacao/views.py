@@ -4,6 +4,8 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import auth
 
+
+
 def cadastro(request):
     if request.method == "GET":
         return render(request, 'cadastro.html')
@@ -51,3 +53,8 @@ def logar(request):
         else:
             auth.login(request, usuario)
             return redirect('/')
+
+
+def sair(request):
+    auth.logout(request)
+    return redirect('/auth/logar')
