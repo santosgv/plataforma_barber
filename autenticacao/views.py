@@ -8,9 +8,12 @@ from django.contrib import auth
 
 def cadastro(request):
     if request.method == "GET":
+        if request.user.is_authenticated:
+            return redirect('/')
         return render(request, 'cadastro.html')
     elif request.method == "POST":
         username = request.POST.get('username')
+        email = request.POST.get('email')
         senha = request.POST.get('password')
         confirmar_senha = request.POST.get('confirm-password')
 
@@ -30,6 +33,7 @@ def cadastro(request):
         
         try:
             user = User.objects.create_user(username=username,
+                                            email = email,
                                             password=senha)
             user.save()
             messages.add_message(request, constants.SUCCESS, 'Usuário criado com sucesso')
@@ -40,6 +44,8 @@ def cadastro(request):
 
 def logar(request):
     if request.method == "GET":
+        if request.user.is_authenticated:
+            return redirect('/')
         return render(request, 'logar.html')
     elif request.method == "POST":
         username = request.POST.get('username')

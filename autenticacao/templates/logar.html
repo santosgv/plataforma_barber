@@ -8,7 +8,14 @@
 {% block 'body' %}
     <div class="box">
         <form action="{% url 'logar' %}" method="post">{% csrf_token %}
-
+            {% if messages %}
+				<br>
+        {% for message in messages %}
+            <div class="alert {{message.tags}}">
+                {{message}}
+            </div>
+            {% endfor %}
+            {% endif %}
             <h1 class="titulo font-degrade borda-bottom-degrade">LOGAR</h2>
             <br>
             <span class="span-descricao">Nome de usuário:</span>
@@ -18,7 +25,8 @@
             <input type="password" class="form-control input-cadastro" name="password">
             <br>
             <input  type="submit" value="LOGAR" class="btn btn-success btn-lg">
-            <a href="{% url 'logar' %}" class="btn btn-primary btn-lg">CADASTRO</a> 
+            <a href="{% url 'cadastro' %}" class="btn btn-primary btn-lg">CADASTRO</a> 
+            <a href="{% url 'password_reset' %}">Esqueci minha senha</a>
         </form>
             
     </div>
