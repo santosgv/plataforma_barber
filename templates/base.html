@@ -55,7 +55,8 @@
               Perfil
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Meus Agendamentos</a>
+              <a class="dropdown-item" href="{% url 'agendar' %}">Agendar Horario</a>
+              <a class="dropdown-item" href="{% url 'agendamento' %}">Meus Agendamentos</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{%url 'sair' %}">Sair</a>
             </div>
