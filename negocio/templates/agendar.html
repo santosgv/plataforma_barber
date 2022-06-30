@@ -7,4 +7,29 @@
 
 {% block 'body' %}
 <h1> Agendar</h1>
+<div class="box">
+    <form method="POST" action="{% url 'agendar'%}">{% csrf_token %}
+    <h1>Selecione o dia</h1>
+    <select name="dias" id="dias">
+        {% for dia in dias %}
+        <option >{{dia}}</option>
+        {% endfor%}
+    </select>
+    <hr>
+    <h1>Selecione a Hora </h1>
+
+    <select name="hora" id="hora">
+        {% for hora in horas %}
+        <option >{{hora}}</option>
+        {% endfor%}
+    </select>
+
+    <select name="funcionario" id="funcionario">
+        {% for funcionario in funcionarios %}
+        <option >{{funcionario}}</option>
+        {% endfor%}
+    </select>
+    <input type="submit" required value="Continuar" class="btn btn-success">
+        </form>
+   </div>
 {% endblock %}
