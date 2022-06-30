@@ -2,13 +2,13 @@
 {% load static %}
 
 {% block 'head' %}
-<link rel="stylesheet" href="#">
-{% endblock %}
+<link rel="stylesheet" href="{% static 'home/css/home.css' %}" >
+{% endblock %} 
 
 {% block 'body' %}
 <h1> Agendar</h1>
 <div class="box">
-    <form method="POST" action="{% url 'agendar'%}">{% csrf_token %}
+    <form method="POST" action="{% url 'valida'%}">{% csrf_token %}
     <h1>Selecione o dia</h1>
     <select name="dias" id="dias">
         {% for dia in dias %}

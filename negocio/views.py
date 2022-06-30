@@ -1,3 +1,4 @@
+from os import name
 from django.contrib import messages
 from django.contrib.messages import constants
 from django.shortcuts import redirect, render
@@ -12,26 +13,30 @@ def agendamentos(request):
     return render(request, 'agendamento.html',{'agenda':agenda})
 
 def agendar(request):
-    if request.session.get('GET'):
-        return render(request, 'agendar.html')
-    else:
-        horas = Horario.objects.all()
-        dias = Dia.objects.all()
-        funcionarios = Funcionario.objects.all()
-        
-        dia = request.POST.get('dias')
-        hora = request.POST.get('hora')
-        funcionario = request.POST.get('funcionario')
-        usuario = request.user
-        
-        Agenda = Agendamento(Funcionario = funcionario,
-                                    usuario = usuario,
-                                    dia = dia,
-                                    horario = hora,
-                                    )
 
-        Agenda.save()
+    horas = Horario.objects.all()
+    dias = Dia.objects.all()
+    funcionarios = Funcionario.objects.all()
+    
+    return render(request, 'agendar.html',{'dias':dias,
+                                            'horas' :horas,
+                                            'funcionarios':funcionarios})
 
-        return render(request, 'agendar.html',{'dias':dias,
-                                                'horas' :horas,
-                                                'funcionarios':funcionarios})
+
+def valida(request):
+    dia = request.POST.get('dias')
+    hora = request.POST.get('hora')
+    funcionario = request.POST.get('funcionario')
+    usuario = request.user
+    
+    Agenda = Agendamento(Funcionario = Funcionario.objects.get(nome=funcionario),
+                                usuario = usuario,
+                                dia = Dia.objects.get(dia=dia),
+                                horario = Horario.objects.get(horario=hora)
+                                )
+
+    Agenda.save()
+
+    agenda = Agendamento.objects.all().filter(status='A').filter(usuario=usuario)
+
+    return render(request, 'agendamento.html',{'agenda':agenda})
