@@ -7,16 +7,19 @@
 {% endblock %}
 
 {% block 'body' %}
+
+{% if messages %}
+<br>
+{% for message in messages %}
+<div class="alert {{message.tags}}">
+{{message}}
+</div>
+{% endfor %}
+{% endif %}
+
     <div class="box">
         <form action="{% url 'logar' %}" method="post">{% csrf_token %}
-            {% if messages %}
-				<br>
-        {% for message in messages %}
-            <div class="alert {{message.tags}}">
-                {{message}}
-            </div>
-            {% endfor %}
-            {% endif %}
+
             <h1 class="titulo font-degrade borda-bottom-degrade">LOGAR</h2>
             <br>
             <span class="span-descricao">Nome de usuário:</span>

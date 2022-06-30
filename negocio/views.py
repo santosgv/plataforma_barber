@@ -28,15 +28,28 @@ def valida(request):
     hora = request.POST.get('hora')
     funcionario = request.POST.get('funcionario')
     usuario = request.user
+
     
-    Agenda = Agendamento(Funcionario = Funcionario.objects.get(nome=funcionario),
-                                usuario = usuario,
-                                dia = Dia.objects.get(dia=dia),
-                                horario = Horario.objects.get(horario=hora)
-                                )
 
-    Agenda.save()
+    if Agendamento.objects.filter(dia=Dia.objects.get(dia=dia)).filter(horario=Horario.objects.get(horario=hora)).filter(Funcionario=Funcionario.objects.get(nome=funcionario)).filter(status='A'):
 
-    agenda = Agendamento.objects.all().filter(status='A').filter(usuario=usuario)
+        messages.add_message(request, constants.ERROR, 'Dia e Horario Ja reservado com este Profissional queira escolher outra data por gentileza !')
 
-    return render(request, 'agendamento.html',{'agenda':agenda})
+
+        return render(request, 'erro_agendamento.html',{'dia': dia,
+                                                        'hora': hora,
+                                                        'funcionario' : funcionario
+                                                        })
+
+    else:
+        Agenda = Agendamento(Funcionario = Funcionario.objects.get(nome=funcionario),
+                                    usuario = usuario,
+                                    dia = Dia.objects.get(dia=dia),
+                                    horario = Horario.objects.get(horario=hora)
+                                    )
+
+        Agenda.save()
+
+        agenda = Agendamento.objects.all().filter(status='A').filter(usuario=usuario)
+
+        return render(request, 'agendamento.html',{'agenda':agenda})

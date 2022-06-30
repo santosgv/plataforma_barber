@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'home/css/home.css' %}" >
+{% endblock %} 
+
+{% block 'body' %}
+
+{% if messages %}
+<br>
+    {% for message in messages %}
+    <div class="alert {{message.tags}}">
+    {{message}}
+    </div>
+{% endfor %}
+
+<a href="{% url 'agendar' %}">Agendar outra Data</a>
+
+{% endif %}
+
+{% endblock %} 
