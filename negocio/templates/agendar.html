@@ -14,7 +14,7 @@
     <form method="POST" action="{% url 'valida'%}">{% csrf_token %}
 <div class="form">
         <label >Selecione o dia: </label>
-        <select name="dias" id="dias">
+        <select name="dias" id="dias" width="100px">
             {% for dia in dias %}
             <option >{{dia}}</option>
             {% endfor%}

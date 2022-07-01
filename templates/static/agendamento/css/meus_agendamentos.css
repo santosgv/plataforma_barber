@@ -6,10 +6,9 @@
 }
 
 .form{
-    width: 80%;
-    margin-left: 100px;
+    width: 100%;
     padding: 10px;
-    display: inline-block;
+    display: block;
 }
 
 

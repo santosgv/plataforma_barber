@@ -8,15 +8,14 @@
 
 
 {% block 'body' %}
-<html lang="en">
-<div class="form text-center">
+
+<div class="form container-fluid margin text-center">
 <h1 class="tit-depoi">Meus Agendamentos</h1>
 <table class="table table-striped">
     <tr class="thead-dark">
         <th scope="col">Dia</th>
         <th scope="col">Hora</th>
         <th scope="col">Funcionario</th>
-        <th scope="col">Usuario</th>
         <th scope="col">Observacao</th>
         <th scope="col">Status</th>
       </tr>
@@ -27,7 +26,6 @@
           <th scope="row">{{dia.dia}}</th>
           <td>{{dia.horario}}</td>
           <td>{{dia.Funcionario}}</td>
-          <td>{{dia.usuario}}</td>
           <td>{{dia.observacao}}</td>
           <td>
             {% if dia.status == "A" %}
@@ -48,6 +46,6 @@
       {% endfor%}
 </table>
 </div>
-</html>
+
 
 {% endblock %}
