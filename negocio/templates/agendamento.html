@@ -8,7 +8,8 @@
 
 
 {% block 'body' %}
-<div class="box text-center">
+<html lang="en">
+<div class="form text-center">
 <h1 class="tit-depoi">Meus Agendamentos</h1>
 <table class="table table-striped">
     <tr class="thead-dark">
@@ -41,24 +42,12 @@
                             <span class="badge badge-danger">Cancelado</span>
                         {% endif %}
           </td>    
-          <td>
-
-            {% if dia.status == "A" %}
-                <a href="{% url 'cancela_agendamento' dia.id %}" class="btn btn-danger">CANCELAR</a>
-            {% else %}
-                <a href="" class="btn btn-danger disabled">CANCELAR</a>
-            
-            {% endif %}
-
-            
-        
-        </td>
         </tr>
 
       </tbody>
       {% endfor%}
 </table>
 </div>
-   
+</html>
 
 {% endblock %}

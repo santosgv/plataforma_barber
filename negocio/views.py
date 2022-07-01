@@ -6,13 +6,15 @@ from django.shortcuts import redirect, render ,get_object_or_404
 from django.contrib.auth.models import User
 from .models import Agendamento ,Horario , Dia ,Funcionario
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 
-
+@login_required(login_url='logar')
 def agendamentos(request):
     usuario = request.user
     agenda = Agendamento.objects.all().filter(usuario=usuario)
     return render(request, 'agendamento.html',{'agenda':agenda})
 
+@login_required(login_url='logar')
 def agendar(request):
 
     horas = Horario.objects.all()
@@ -23,7 +25,7 @@ def agendar(request):
                                             'horas' :horas,
                                             'funcionarios':funcionarios})
 
-
+@login_required(login_url='logar')
 def valida(request):
     dia = request.POST.get('dias')
     hora = request.POST.get('hora')
@@ -55,6 +57,7 @@ def valida(request):
 
         return render(request, 'agendamento.html',{'agenda':agenda})
 
+@login_required(login_url='Login')
 def cancela_agendamento(request ,id):
     agendamento = Agendamento.objects.get(id=id)
     agendamento.status = "C"
