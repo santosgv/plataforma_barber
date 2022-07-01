@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block 'head' %}
-<link rel="stylesheet" href="{% static 'autenticacao/css/cadastro.css' %}">
+<link rel="stylesheet" href="{% static 'autenticacao/css/autenticacao.css' %}">
 <link rel="stylesheet" href="{% static 'home/css/home.css' %}" >
 {% endblock %}
 
 {% block 'body' %}
-    <div class="box">
+    <div class="box text-center">
         <form action="{% url  'cadastro' %}" method="POST">{% csrf_token %}
 
                     {% if messages %}

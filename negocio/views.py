@@ -1,7 +1,8 @@
 from os import name
 from django.contrib import messages
 from django.contrib.messages import constants
-from django.shortcuts import redirect, render
+from django.http import HttpRequest
+from django.shortcuts import redirect, render ,get_object_or_404
 from django.contrib.auth.models import User
 from .models import Agendamento ,Horario , Dia ,Funcionario
 from django.contrib import auth
@@ -9,7 +10,7 @@ from django.contrib import auth
 
 def agendamentos(request):
     usuario = request.user
-    agenda = Agendamento.objects.all().filter(status='A').filter(usuario=usuario)
+    agenda = Agendamento.objects.all().filter(usuario=usuario)
     return render(request, 'agendamento.html',{'agenda':agenda})
 
 def agendar(request):
@@ -50,6 +51,12 @@ def valida(request):
 
         Agenda.save()
 
-        agenda = Agendamento.objects.all().filter(status='A').filter(usuario=usuario)
+        agenda = Agendamento.objects.all().filter(usuario=usuario)
 
         return render(request, 'agendamento.html',{'agenda':agenda})
+
+def cancela_agendamento(request ,id):
+    agendamento = Agendamento.objects.get(id=id)
+    agendamento.status = "C"
+    agendamento.save()
+    return   redirect('/agendamentos')

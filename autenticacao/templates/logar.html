@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block 'head' %}
-<link rel="stylesheet" href="{% static 'autenticacao/css/cadastro.css' %}">
+<link rel="stylesheet" href="{% static 'autenticacao/css/autenticacao.css' %}">
 <link rel="stylesheet" href="{% static 'home/css/home.css' %}" >
 {% endblock %}
 
@@ -17,7 +17,7 @@
 {% endfor %}
 {% endif %}
 
-    <div class="box">
+    <div class="box text-center">
         <form action="{% url 'logar' %}" method="post">{% csrf_token %}
 
             <h1 class="titulo font-degrade borda-bottom-degrade">LOGAR</h2>

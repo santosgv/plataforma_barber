@@ -2,19 +2,63 @@
 {% load static %}
 
 {% block 'head' %}
+<link rel="stylesheet" href="{% static 'agendamento/css/meus_agendamentos.css' %}">
 <link rel="stylesheet" href="{% static 'home/css/home.css' %}" >
 {% endblock %} 
 
 
 {% block 'body' %}
-<h1>agendamentos</h1>
-{% for dia in agenda %}
+<div class="box text-center">
+<h1 class="tit-depoi">Meus Agendamentos</h1>
+<table class="table table-striped">
+    <tr class="thead-dark">
+        <th scope="col">Dia</th>
+        <th scope="col">Hora</th>
+        <th scope="col">Funcionario</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Observacao</th>
+        <th scope="col">Status</th>
+      </tr>
+      {% for dia in agenda %}
+      <tbody>
+        <tr>
+          <th hidden id="{{dia.id}}" name="{{dia.id}}"></th>
+          <th scope="row">{{dia.dia}}</th>
+          <td>{{dia.horario}}</td>
+          <td>{{dia.Funcionario}}</td>
+          <td>{{dia.usuario}}</td>
+          <td>{{dia.observacao}}</td>
+          <td>
+            {% if dia.status == "A" %}
+                            <span class="badge badge-info">Agendado</span>
+                        {% endif %}
 
-    <h1>{{dia.Funcionario}}</h1>
-    <h1>{{dia.usuario}}</h1>
-    <h1>{{dia.dia}}</h1>
-    <h1>{{dia.horario}}</h1>
-    <h1>{{dia.observacao}}</h1>
-    {% endfor%}
+                        {% if dia.status == "F" %}
+                            <span class="badge badge-success">Finalizado</span>
+                        {% endif %}
+
+                        {% if dia.status == "C" %}
+                            <span class="badge badge-danger">Cancelado</span>
+                        {% endif %}
+          </td>    
+          <td>
+
+            {% if dia.status == "A" %}
+                <a href="{% url 'cancela_agendamento' dia.id %}" class="btn btn-danger">CANCELAR</a>
+            {% else %}
+                <a href="" class="btn btn-danger disabled">CANCELAR</a>
+            
+            {% endif %}
+
+            
+        
+        </td>
+        </tr>
+
+      </tbody>
+      {% endfor%}
+</table>
+</div>
+   
 
 {% endblock %}
