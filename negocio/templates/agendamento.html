@@ -22,7 +22,7 @@
       {% for dia in agenda %}
       <tbody>
         <tr>
-          <th hidden id="{{dia.id}}" name="{{dia.id}}"></th>
+          <th hidden id="id" name="id">{{dia.id}}</th>
           <th scope="row">{{dia.dia}}</th>
           <td>{{dia.horario}}</td>
           <td>{{dia.Funcionario}}</td>
@@ -30,16 +30,22 @@
           <td>
             {% if dia.status == "A" %}
                             <span class="badge badge-info">Agendado</span>
+                            <span class="badge badge-danger">
+                              <a href="{% url 'cancela_agendamento' %}">Cancelar</a>
+                            </span>
+                            
                         {% endif %}
 
                         {% if dia.status == "F" %}
                             <span class="badge badge-success">Finalizado</span>
+                           
                         {% endif %}
 
                         {% if dia.status == "C" %}
-                            <span class="badge badge-danger">Cancelado</span>
+                        <span class="badge badge-danger">Cancelado</span>
                         {% endif %}
-          </td>    
+          </td>
+         
         </tr>
 
       </tbody>

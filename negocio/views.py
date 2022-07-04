@@ -1,7 +1,7 @@
 from os import name
 from django.contrib import messages
 from django.contrib.messages import constants
-from django.http import HttpRequest
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render ,get_object_or_404
 from django.contrib.auth.models import User
 from .models import Agendamento ,Horario , Dia ,Funcionario
@@ -57,9 +57,6 @@ def valida(request):
 
         return render(request, 'agendamento.html',{'agenda':agenda})
 
-#@login_required(login_url='Login')
-#def cancela_agendamento(request ,id):
-#    agendamento = Agendamento.objects.get(id=id)
-#    agendamento.status = "C"
-#    agendamento.save()
-#    return   redirect('/agendamentos')
+@login_required(login_url='Login')
+def cancela_agendamento(request):
+    return   HttpResponse('Cancelado')
