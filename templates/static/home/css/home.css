@@ -55,9 +55,10 @@ row {
     padding-bottom: 50px;
   }
   
-  .quemSomos div img {
-    justify-content: center;
-  }
+.quemSomos{
+  background-attachment:fixed;
+  width: 100%;
+}
   
   .quemSomos p {
     font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
