@@ -57,9 +57,9 @@ def valida(request):
 
         return render(request, 'agendamento.html',{'agenda':agenda})
 
-@login_required(login_url='Login')
-def cancela_agendamento(request ,id):
-    agendamento = Agendamento.objects.get(id=id)
-    agendamento.status = "C"
-    agendamento.save()
-    return   redirect('/agendamentos')
+#@login_required(login_url='Login')
+#def cancela_agendamento(request ,id):
+#    agendamento = Agendamento.objects.get(id=id)
+#    agendamento.status = "C"
+#    agendamento.save()
+#    return   redirect('/agendamentos')
