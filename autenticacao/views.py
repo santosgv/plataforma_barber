@@ -17,6 +17,7 @@ def cadastro(request):
         if request.user.is_authenticated:
             return redirect('/')
         return render(request, 'cadastro.html')
+        
     elif request.method == "POST":
         username = request.POST.get('username')
         email = request.POST.get('email')
