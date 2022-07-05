@@ -1,3 +1,8 @@
+:root {
+    --azul :rgb(12, 49, 214);
+    --branco :#fff;
+}
+
 .box {
     margin-top: 25px;
     margin-left: 30px;
@@ -14,4 +19,22 @@
 
 .cancela a {
     text-decoration: none;
+}
+
+.select {
+    color: var(--azul);
+    background-color: var(--branco);
+    width: 20em;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    background-color: var(--darkgray);
+    background-image: none;
+    cursor: pointer;
 }

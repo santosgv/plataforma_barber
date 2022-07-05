@@ -7,32 +7,37 @@
 {% endblock %} 
 
 {% block 'body' %}
-<div class="box text-center">
+<div class="box container-fluid margin text-center">
 <h1 class="tit-depoi"> Agendar</h1>
 
 <div class="box">
     <form method="POST" action="{% url 'valida'%}">{% csrf_token %}
 <div class="form">
-        <label >Selecione o dia: </label>
-        <select name="dias" id="dias" width="100px">
+    <div class="text-center">
+        <label >Selecione o dia : </label>
+        <select class="select" name="dias" id="dias" width="100px">
             {% for dia in dias %}
             <option >{{dia}}</option>
             {% endfor%}
         </select>
-
-        <label>Selecione a Hora: </label>
-        <select name="hora" id="hora">
+    </div>
+    <div class="text-center">
+        <label>Selecione a Hora : </label>
+        <select class="select" name="hora" id="hora">
             {% for hora in horas %}
             <option >{{hora}}</option>
             {% endfor%}
         </select>
-        <label for="">Selecione Funcionario: </label>
+    </div>
+    <div class="text-center">
+        <label for="">Selecione Funcionario : </label>
         
-        <select name="funcionario" id="funcionario">
+        <select class="select" name="funcionario" id="funcionario">
             {% for funcionario in funcionarios %}
             <option >{{funcionario}}</option>
             {% endfor%}
         </select>
+    </div>
 </div>
 <br>
 <br>
