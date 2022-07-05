@@ -36,4 +36,4 @@ class Agendamento(models.Model):
     observacao = models.TextField(max_length=500 ,blank=True)
 
     def __str__(self) -> str:
-        return str(self.Funcionario)
+        return str(self.id)
